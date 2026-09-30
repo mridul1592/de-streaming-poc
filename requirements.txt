@@ -1,0 +1,5 @@
+apache-airflow-providers-fab>=2.0.0
+requests>=2.31.0
+kafka-python-ng>=2.2.2
+pyspark>=3.5.0
+cassandra-driver>=3.29.0

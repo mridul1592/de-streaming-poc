@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(wsl.exe -e bash -lc 'which java; java -version 2>&1; echo '\\\\''---'\\\\''; which python3; python3 -c '\\\\''import pyspark; print\\(pyspark.__file__\\)'\\\\'' 2>&1; echo '\\\\''---JAVA_HOME---'\\\\''; echo $JAVA_HOME')",
+      "Bash(wsl.exe -e bash -lc \"docker context ls 2>&1; echo '---'; docker context show 2>&1; echo '---'; cat /mnt/wsl/docker-desktop/cli-tools/usr/bin/docker 2>&1 | head -c 200; echo; echo '---version---'; /mnt/wsl/docker-desktop/cli-tools/usr/bin/docker --version 2>&1\")",
+      "PowerShell(Get-WinEvent -FilterHashtable @{LogName='Microsoft-Windows-Hyper-V-Worker-Admin','System'; StartTime=\\(Get-Date\\).AddMinutes\\(-30\\)} -ErrorAction SilentlyContinue | Select-Object -First 20 TimeCreated, Id, LevelDisplayName, Message | Format-List)",
+      "WebSearch",
+      "PowerShell(Get-ChildItem \"$env:LOCALAPPDATA\\\\Docker\\\\run\" -Force -ErrorAction SilentlyContinue | Select-Object Name, Attributes, Length)"
+    ]
+  }
+}
